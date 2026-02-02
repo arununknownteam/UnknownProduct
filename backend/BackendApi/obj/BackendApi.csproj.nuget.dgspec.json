@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/BackendApi.csproj": {}
+  },
+  "projects": {
+    "/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/BackendApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/BackendApi.csproj",
+        "projectName": "BackendApi",
+        "projectPath": "/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/BackendApi.csproj",
+        "packagesPath": "/home/arunkumar/.nuget/packages/",
+        "outputPath": "/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/arunkumar/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentNHibernate": {
+              "target": "Package",
+              "version": "[3.4.1, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.1.4, )"
+            },
+            "NHibernate": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
