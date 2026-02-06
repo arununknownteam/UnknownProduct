@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sUtufNYi93M=",
+  "dgSpecHash": "24rdmRy0ZYI=",
   "success": true,
   "projectFilePath": "/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/BackendApi.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "/home/arunkumar/.nuget/packages/microsoft.win32.primitives/4.0.1/microsoft.win32.primitives.4.0.1.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/netstandard.library/1.6.0/netstandard.library.1.6.0.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/nhibernate/5.6.0/nhibernate.5.6.0.nupkg.sha512",
+    "/home/arunkumar/.nuget/packages/npgsql/10.0.1/npgsql.10.0.1.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/remotion.linq/2.2.0/remotion.linq.2.2.0.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/remotion.linq.eagerfetching/2.2.0/remotion.linq.eagerfetching.2.2.0.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/runtime.native.system/4.0.0/runtime.native.system.4.0.0.nupkg.sha512",
@@ -52,7 +53,7 @@
     "/home/arunkumar/.nuget/packages/system.configuration.configurationmanager/8.0.1/system.configuration.configurationmanager.8.0.1.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/system.console/4.0.0/system.console.4.0.0.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/system.diagnostics.debug/4.0.11/system.diagnostics.debug.4.0.11.nupkg.sha512",
-    "/home/arunkumar/.nuget/packages/system.diagnostics.diagnosticsource/8.0.1/system.diagnostics.diagnosticsource.8.0.1.nupkg.sha512",
+    "/home/arunkumar/.nuget/packages/system.diagnostics.diagnosticsource/9.0.11/system.diagnostics.diagnosticsource.9.0.11.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/system.diagnostics.eventlog/8.0.1/system.diagnostics.eventlog.8.0.1.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/system.diagnostics.tools/4.0.1/system.diagnostics.tools.4.0.1.nupkg.sha512",
     "/home/arunkumar/.nuget/packages/system.diagnostics.tracing/4.1.0/system.diagnostics.tracing.4.1.0.nupkg.sha512",

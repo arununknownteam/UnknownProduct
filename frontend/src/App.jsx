@@ -1,35 +1,81 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [id, setId] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [msg, setMsg] = useState("");
+
+  const saveUser = async () => {
+    try {
+      const res = await fetch("http://localhost:5243/api/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: parseInt(id),
+          name: name,
+          email: email,
+        }),
+      });
+
+      if (res.ok) {
+        setMsg("✅ User inserted successfully");
+        setId("");
+        setName("");
+        setEmail("");
+      } else {
+        const text = await res.text();
+        setMsg("❌ Error: " + text);
+      }
+    } catch (err) {
+      setMsg("❌ Server not running");
+    }
+  };
 
   return (
-    <>
+    <div style={{ padding: 40, fontFamily: "Arial" }}>
+      <h2>User Entry Form</h2>
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <label>Id:</label><br/>
+        <input
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+          placeholder="Enter Id"
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <br/>
+
+      <div>
+        <label>Name:</label><br/>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter Name"
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <br/>
+
+      <div>
+        <label>Email:</label><br/>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter Email"
+        />
+      </div>
+
+      <br/>
+
+      <button onClick={saveUser}>Save User</button>
+
+      <p>{msg}</p>
+    </div>
+  );
 }
 
-export default App
+export default App;

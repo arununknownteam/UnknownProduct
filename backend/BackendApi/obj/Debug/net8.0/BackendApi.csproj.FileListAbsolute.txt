@@ -84,3 +84,6 @@
 /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll
 /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll
 /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll
+/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/obj/Debug/net8.0/BackendApi.sourcelink.json
+/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/bin/Debug/net8.0/Npgsql.dll
+/home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
