@@ -1,0 +1,26 @@
+[2026-05-17 03:36:24] INFO: NHibernate initialization started.
+[2026-05-17 03:36:24] INFO: Mappings Loaded: 8
+[2026-05-17 03:36:24] INFO: Schema export started.
+[2026-05-17 03:36:24] INFO: Schema export completed.
+[2026-05-17 03:36:24] INFO: SessionFactory created successfully.
+[2026-05-17 03:39:05] INFO: NHibernate initialization started.
+[2026-05-17 03:39:05] INFO: Mappings Loaded: 8
+[2026-05-17 03:39:05] INFO: Schema export started.
+[2026-05-17 03:39:06] SQL:
+
+    alter table users 
+        add column IsPublic boolean
+[2026-05-17 03:39:06] INFO: Schema export completed.
+[2026-05-17 03:39:06] INFO: SessionFactory created successfully.
+[2026-05-17 03:42:03] INFO: NHibernate initialization started.
+[2026-05-17 03:42:03] INFO: Loaded Mapping: BackendApi.Entities.Comment
+[2026-05-17 03:42:03] INFO: Loaded Mapping: BackendApi.Entities.Follow
+[2026-05-17 03:42:03] INFO: Loaded Mapping: BackendApi.Entities.Like
+[2026-05-17 03:42:03] INFO: Loaded Mapping: BackendApi.Entities.Notification
+[2026-05-17 03:42:03] INFO: Loaded Mapping: BackendApi.Entities.Post
+[2026-05-17 03:42:03] INFO: Loaded Mapping: BackendApi.Entities.Story
+[2026-05-17 03:42:03] INFO: Loaded Mapping: BackendApi.Entities.User
+[2026-05-17 03:42:03] INFO: Loaded Mapping: BackendApi.Entities.Video
+[2026-05-17 03:42:03] INFO: Schema export started.
+[2026-05-17 03:42:03] INFO: Schema export completed.
+[2026-05-17 03:42:04] INFO: SessionFactory created successfully.

@@ -1,6 +1,18 @@
+using BackendApi.NHibernate;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File(
+        "logs/backend-.log",
+        rollingInterval: RollingInterval.Day
+    )
+    .CreateLogger();
+
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔥 ADD THIS
+builder.Host.UseSerilog();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -13,18 +25,27 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// 🔥 ADD THIS
 app.UseCors("AllowAll");
 
 app.UseSwagger();
+
 app.UseSwaggerUI();
 
 app.UseAuthorization();
+
 app.MapControllers();
+
+
+// FORCE NHIBERNATE INITIALIZATION
+var sessionFactory = NHibernateHelper.SessionFactory;
+
+Log.Information("NHibernate SessionFactory initialized");
 
 app.Run();
