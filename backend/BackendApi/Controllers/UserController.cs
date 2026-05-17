@@ -1,26 +1,43 @@
-using BackendApi.Entities;
-using BackendApi.Repositories;
+using BackendApi.NHibernate;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Security.Claims;
+using ISession = NHibernate.ISession;
 namespace BackendApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/user")]
+    [Authorize]
     public class UserController : ControllerBase
     {
-        private readonly UserRepository _repo = new();
+        private readonly ISession _session;
 
-        [HttpGet]
-        public IActionResult Get()
+        public UserController(ISession session)
         {
-            return Ok(_repo.GetAll());
+            _session = session;
         }
 
-        [HttpPost]
-        public IActionResult Post(User user)
+        [HttpGet("profile")]
+        public IActionResult GetProfile()
         {
-            _repo.Add(user);
-            return Ok();
+            var email = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            var user = _session.Query<BackendApi.Entities.User>()
+                .FirstOrDefault(u => u.Email == email);
+            
+            if (user == null)
+                return NotFound(new { error = "User not found" });
+
+            AppLogger.Info($"{user.UserName} Login Suggessfully");
+            
+            return Ok(new
+            {
+                userName = user.UserName,
+                email = user.Email,
+                bio = user.Bio,
+                profileImageUrl = user.ProfileImageUrl,
+                createdAt = user.CreatedAt
+            });
         }
     }
 }

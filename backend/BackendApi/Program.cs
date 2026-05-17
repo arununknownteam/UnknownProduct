@@ -1,51 +1,115 @@
+using System.Text;
 using BackendApi.NHibernate;
+using BackendApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
+
+// 👉 FIX: Avoid ISession conflict
+using NHSession = NHibernate.ISession;
+using ISessionFactory = NHibernate.ISessionFactory;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .WriteTo.File(
-        "logs/backend-.log",
-        rollingInterval: RollingInterval.Day
-    )
+    .WriteTo.File("logs/backend-.log", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
+// =====================
+// SERILOG
+// =====================
 builder.Host.UseSerilog();
 
+// =====================
+// CORS
+// =====================
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
-        policy =>
-        {
-            policy.AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        });
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
 });
 
+// =====================
+// CONTROLLERS
+// =====================
 builder.Services.AddControllers();
 
+// =====================
+// SWAGGER
+// =====================
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddSwaggerGen();
+
+// =====================
+// NHIBERNATE
+// =====================
+builder.Services.AddSingleton(NHibernateHelper.SessionFactory);
+
+// Session per request (FIXED)
+builder.Services.AddScoped<NHSession>(sp =>
+{
+    var factory = sp.GetRequiredService<ISessionFactory>();
+    return factory.OpenSession();
+});
+
+// =====================
+// SERVICES
+// =====================
+builder.Services.AddScoped<LoginService>();
+
+// =====================
+// JWT AUTH
+// =====================
+var jwtKey = builder.Configuration["Jwt:Key"];
+
+if (string.IsNullOrEmpty(jwtKey))
+{
+    throw new Exception("JWT Key is missing in appsettings.json");
+}
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(jwtKey)
+            )
+        };
+    });
 
 var app = builder.Build();
 
+// =====================
+// MIDDLEWARE PIPELINE
+// =====================
 app.UseCors("AllowAll");
 
 app.UseSwagger();
-
 app.UseSwaggerUI();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-
-// FORCE NHIBERNATE INITIALIZATION
-var sessionFactory = NHibernateHelper.SessionFactory;
-
+// =====================
+// INIT LOG
+// =====================
 Log.Information("NHibernate SessionFactory initialized");
 
 app.Run();

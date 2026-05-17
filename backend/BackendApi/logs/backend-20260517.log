@@ -1,17 +1,112 @@
-2026-05-17 03:36:24.813 +05:30 [INF] NHibernate SessionFactory initialized
-2026-05-17 03:36:24.881 +05:30 [INF] Now listening on: http://localhost:5243
-2026-05-17 03:36:24.884 +05:30 [INF] Application started. Press Ctrl+C to shut down.
-2026-05-17 03:36:24.884 +05:30 [INF] Hosting environment: Development
-2026-05-17 03:36:24.884 +05:30 [INF] Content root path: /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi
-2026-05-17 03:37:54.400 +05:30 [INF] Application is shutting down...
-2026-05-17 03:39:06.138 +05:30 [INF] NHibernate SessionFactory initialized
-2026-05-17 03:39:06.204 +05:30 [INF] Now listening on: http://localhost:5243
-2026-05-17 03:39:06.207 +05:30 [INF] Application started. Press Ctrl+C to shut down.
-2026-05-17 03:39:06.207 +05:30 [INF] Hosting environment: Development
-2026-05-17 03:39:06.208 +05:30 [INF] Content root path: /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi
-2026-05-17 03:40:19.312 +05:30 [INF] Application is shutting down...
-2026-05-17 03:42:04.097 +05:30 [INF] NHibernate SessionFactory initialized
-2026-05-17 03:42:04.163 +05:30 [INF] Now listening on: http://localhost:5243
-2026-05-17 03:42:04.167 +05:30 [INF] Application started. Press Ctrl+C to shut down.
-2026-05-17 03:42:04.167 +05:30 [INF] Hosting environment: Development
-2026-05-17 03:42:04.167 +05:30 [INF] Content root path: /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi
+2026-05-17 17:45:56.263 +05:30 [INF] NHibernate SessionFactory initialized
+2026-05-17 17:45:56.296 +05:30 [INF] User profile is available. Using '/home/arunkumar/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-05-17 17:45:56.343 +05:30 [INF] Now listening on: http://localhost:5243
+2026-05-17 17:45:56.345 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-17 17:45:56.345 +05:30 [INF] Hosting environment: Development
+2026-05-17 17:45:56.345 +05:30 [INF] Content root path: /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi
+2026-05-17 17:48:27.724 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - null null
+2026-05-17 17:48:27.743 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:48:27.747 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - 204 null null 24.2393ms
+2026-05-17 17:48:27.752 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5243/api/auth/login - application/json 48
+2026-05-17 17:48:27.754 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:48:27.780 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-05-17 17:48:27.795 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(BackendApi.DTOs.LoginRequest) on controller BackendApi.Controllers.AuthController (BackendApi).
+2026-05-17 17:48:28.355 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:48:28.371 +05:30 [INF] Executed action BackendApi.Controllers.AuthController.Login (BackendApi) in 573.4014ms
+2026-05-17 17:48:28.371 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-05-17 17:48:28.374 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5243/api/auth/login - 200 null application/json; charset=utf-8 621.8637ms
+2026-05-17 17:48:28.425 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/user/profile - null null
+2026-05-17 17:48:28.425 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:48:28.426 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/user/profile - 204 null null 1.2231ms
+2026-05-17 17:48:28.432 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/api/user/profile - application/json null
+2026-05-17 17:48:28.432 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:48:28.468 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.UserController.GetProfile (BackendApi)'
+2026-05-17 17:48:28.469 +05:30 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller BackendApi.Controllers.UserController (BackendApi).
+2026-05-17 17:48:28.477 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:48:28.484 +05:30 [INF] Executed action BackendApi.Controllers.UserController.GetProfile (BackendApi) in 14.1607ms
+2026-05-17 17:48:28.484 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.UserController.GetProfile (BackendApi)'
+2026-05-17 17:48:28.484 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/api/user/profile - 200 null application/json; charset=utf-8 52.9074ms
+2026-05-17 17:49:31.682 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - null null
+2026-05-17 17:49:31.682 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:49:31.682 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - 204 null null 0.7453ms
+2026-05-17 17:49:31.684 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5243/api/auth/login - application/json 48
+2026-05-17 17:49:31.684 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:49:31.686 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-05-17 17:49:31.686 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(BackendApi.DTOs.LoginRequest) on controller BackendApi.Controllers.AuthController (BackendApi).
+2026-05-17 17:49:31.937 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:49:31.938 +05:30 [INF] Executed action BackendApi.Controllers.AuthController.Login (BackendApi) in 251.9876ms
+2026-05-17 17:49:31.939 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-05-17 17:49:31.939 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5243/api/auth/login - 401 null application/json; charset=utf-8 255.237ms
+2026-05-17 17:49:48.161 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - null null
+2026-05-17 17:49:48.162 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:49:48.162 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - 204 null null 0.5428ms
+2026-05-17 17:49:48.163 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5243/api/auth/login - application/json 48
+2026-05-17 17:49:48.163 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:49:48.163 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-05-17 17:49:48.163 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(BackendApi.DTOs.LoginRequest) on controller BackendApi.Controllers.AuthController (BackendApi).
+2026-05-17 17:49:48.293 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:49:48.293 +05:30 [INF] Executed action BackendApi.Controllers.AuthController.Login (BackendApi) in 129.5792ms
+2026-05-17 17:49:48.293 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-05-17 17:49:48.293 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5243/api/auth/login - 200 null application/json; charset=utf-8 130.5914ms
+2026-05-17 17:49:48.420 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/user/profile - null null
+2026-05-17 17:49:48.420 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:49:48.420 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/user/profile - 204 null null 0.4458ms
+2026-05-17 17:49:48.421 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/api/user/profile - application/json null
+2026-05-17 17:49:48.421 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:49:48.425 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.UserController.GetProfile (BackendApi)'
+2026-05-17 17:49:48.425 +05:30 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller BackendApi.Controllers.UserController (BackendApi).
+2026-05-17 17:49:48.427 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:49:48.428 +05:30 [INF] Executed action BackendApi.Controllers.UserController.GetProfile (BackendApi) in 2.4704ms
+2026-05-17 17:49:48.428 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.UserController.GetProfile (BackendApi)'
+2026-05-17 17:49:48.428 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/api/user/profile - 200 null application/json; charset=utf-8 7.1357ms
+2026-05-17 17:51:12.141 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/auth/register - null null
+2026-05-17 17:51:12.141 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:51:12.141 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/auth/register - 204 null null 0.462ms
+2026-05-17 17:51:12.142 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5243/api/auth/register - application/json 69
+2026-05-17 17:51:12.143 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:51:12.143 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.AuthController.Register (BackendApi)'
+2026-05-17 17:51:12.144 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(BackendApi.DTOs.RegisterRequest) on controller BackendApi.Controllers.AuthController (BackendApi).
+2026-05-17 17:51:12.309 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:51:12.311 +05:30 [INF] Executed action BackendApi.Controllers.AuthController.Register (BackendApi) in 166.5221ms
+2026-05-17 17:51:12.311 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.AuthController.Register (BackendApi)'
+2026-05-17 17:51:12.311 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5243/api/auth/register - 200 null application/json; charset=utf-8 168.7533ms
+2026-05-17 17:51:14.459 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5243/api/auth/register - application/json 69
+2026-05-17 17:51:14.459 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:51:14.459 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.AuthController.Register (BackendApi)'
+2026-05-17 17:51:14.459 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(BackendApi.DTOs.RegisterRequest) on controller BackendApi.Controllers.AuthController (BackendApi).
+2026-05-17 17:51:14.596 +05:30 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:51:14.596 +05:30 [INF] Executed action BackendApi.Controllers.AuthController.Register (BackendApi) in 136.4917ms
+2026-05-17 17:51:14.596 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.AuthController.Register (BackendApi)'
+2026-05-17 17:51:14.596 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5243/api/auth/register - 400 null application/json; charset=utf-8 137.3628ms
+2026-05-17 17:51:14.619 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/favicon.ico - null null
+2026-05-17 17:51:14.620 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/favicon.ico - 404 0 null 0.928ms
+2026-05-17 17:51:14.620 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5243/favicon.ico, Response status code: 404
+2026-05-17 17:51:45.538 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - null null
+2026-05-17 17:51:45.538 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:51:45.538 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - 204 null null 0.3977ms
+2026-05-17 17:51:45.539 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5243/api/auth/login - application/json 50
+2026-05-17 17:51:45.539 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:51:45.540 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-05-17 17:51:45.540 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(BackendApi.DTOs.LoginRequest) on controller BackendApi.Controllers.AuthController (BackendApi).
+2026-05-17 17:51:45.667 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:51:45.667 +05:30 [INF] Executed action BackendApi.Controllers.AuthController.Login (BackendApi) in 127.2861ms
+2026-05-17 17:51:45.667 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-05-17 17:51:45.667 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5243/api/auth/login - 200 null application/json; charset=utf-8 128.215ms
+2026-05-17 17:51:45.776 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/user/profile - null null
+2026-05-17 17:51:45.776 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:51:45.776 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/user/profile - 204 null null 0.5358ms
+2026-05-17 17:51:45.777 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/api/user/profile - application/json null
+2026-05-17 17:51:45.777 +05:30 [INF] CORS policy execution successful.
+2026-05-17 17:51:45.778 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.UserController.GetProfile (BackendApi)'
+2026-05-17 17:51:45.778 +05:30 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller BackendApi.Controllers.UserController (BackendApi).
+2026-05-17 17:51:45.780 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-17 17:51:45.780 +05:30 [INF] Executed action BackendApi.Controllers.UserController.GetProfile (BackendApi) in 1.9214ms
+2026-05-17 17:51:45.780 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.UserController.GetProfile (BackendApi)'
+2026-05-17 17:51:45.781 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/api/user/profile - 200 null application/json; charset=utf-8 3.6427ms
+2026-05-17 17:58:17.566 +05:30 [INF] Application is shutting down...
+2026-05-17 17:58:24.660 +05:30 [INF] NHibernate SessionFactory initialized
+2026-05-17 17:58:24.694 +05:30 [INF] User profile is available. Using '/home/arunkumar/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-05-17 17:58:24.744 +05:30 [INF] Now listening on: http://localhost:5243
+2026-05-17 17:58:24.745 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-17 17:58:24.746 +05:30 [INF] Hosting environment: Development
+2026-05-17 17:58:24.746 +05:30 [INF] Content root path: /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi

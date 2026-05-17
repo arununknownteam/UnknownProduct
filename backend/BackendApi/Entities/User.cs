@@ -7,7 +7,7 @@ namespace BackendApi.Entities
     {
         public virtual Guid Id { get; set; }
 
-        public virtual string Username { get; set; } = string.Empty;
+        public virtual string UserName { get; set; } = string.Empty;
 
         public virtual string Email { get; set; } = string.Empty;
 
@@ -36,7 +36,7 @@ namespace BackendApi.Entities
             Id(x => x.Id)
                 .GeneratedBy.GuidComb();
 
-            Map(x => x.Username)
+            Map(x => x.UserName)
                 .Not.Nullable()
                 .Length(50);
 

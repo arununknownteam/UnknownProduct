@@ -5,7 +5,7 @@ namespace BackendApi.NHibernate
         private static readonly string LogFolder = "logs";
 
         private static readonly string InfoLogFile =
-            Path.Combine(LogFolder, "nhibernate.log");
+            Path.Combine(LogFolder, "Util.log");
 
         private static readonly string ErrorLogFile =
             Path.Combine(LogFolder, "nhibernate-error.log");
