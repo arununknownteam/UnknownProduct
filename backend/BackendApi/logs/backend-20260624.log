@@ -1,0 +1,40 @@
+2026-06-24 00:39:49.996 +05:30 [INF] NHibernate SessionFactory initialized
+2026-06-24 00:39:50.034 +05:30 [INF] User profile is available. Using '/home/arunkumar/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-06-24 00:39:50.091 +05:30 [INF] Now listening on: http://localhost:5243
+2026-06-24 00:39:50.093 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-24 00:39:50.093 +05:30 [INF] Hosting environment: Development
+2026-06-24 00:39:50.093 +05:30 [INF] Content root path: /home/arunkumar/Desktop/ProductDevelopMent/UnknownProduct/backend/BackendApi
+2026-06-24 00:41:19.220 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/ - null null
+2026-06-24 00:41:19.230 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/ - null null
+2026-06-24 00:41:19.272 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/ - 404 0 null 54.0986ms
+2026-06-24 00:41:19.272 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/ - 404 0 null 41.6649ms
+2026-06-24 00:41:19.272 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/favicon.ico - null null
+2026-06-24 00:41:19.278 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5243/, Response status code: 404
+2026-06-24 00:41:19.278 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5243/, Response status code: 404
+2026-06-24 00:41:19.279 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/favicon.ico - 404 0 null 6.5915ms
+2026-06-24 00:41:19.279 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5243/favicon.ico, Response status code: 404
+2026-06-24 00:41:19.293 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/favicon.ico - null null
+2026-06-24 00:41:19.293 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/favicon.ico - 404 0 null 0.5642ms
+2026-06-24 00:41:19.293 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5243/favicon.ico, Response status code: 404
+2026-06-24 00:42:35.333 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - null null
+2026-06-24 00:42:35.337 +05:30 [INF] CORS policy execution successful.
+2026-06-24 00:42:35.338 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/auth/login - 204 null null 4.9754ms
+2026-06-24 00:42:35.339 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5243/api/auth/login - application/json 53
+2026-06-24 00:42:35.340 +05:30 [INF] CORS policy execution successful.
+2026-06-24 00:42:35.341 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-06-24 00:42:35.356 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(BackendApi.DTOs.LoginRequest) on controller BackendApi.Controllers.AuthController (BackendApi).
+2026-06-24 00:42:35.904 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-24 00:42:35.922 +05:30 [INF] Executed action BackendApi.Controllers.AuthController.Login (BackendApi) in 563.517ms
+2026-06-24 00:42:35.922 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.AuthController.Login (BackendApi)'
+2026-06-24 00:42:35.925 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5243/api/auth/login - 200 null application/json; charset=utf-8 585.4995ms
+2026-06-24 00:42:35.995 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5243/api/user/profile - null null
+2026-06-24 00:42:35.996 +05:30 [INF] CORS policy execution successful.
+2026-06-24 00:42:35.996 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5243/api/user/profile - 204 null null 1.2596ms
+2026-06-24 00:42:35.997 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5243/api/user/profile - application/json null
+2026-06-24 00:42:35.997 +05:30 [INF] CORS policy execution successful.
+2026-06-24 00:42:36.027 +05:30 [INF] Executing endpoint 'BackendApi.Controllers.UserController.GetProfile (BackendApi)'
+2026-06-24 00:42:36.029 +05:30 [INF] Route matched with {action = "GetProfile", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProfile() on controller BackendApi.Controllers.UserController (BackendApi).
+2026-06-24 00:42:36.035 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-24 00:42:36.042 +05:30 [INF] Executed action BackendApi.Controllers.UserController.GetProfile (BackendApi) in 13.1507ms
+2026-06-24 00:42:36.042 +05:30 [INF] Executed endpoint 'BackendApi.Controllers.UserController.GetProfile (BackendApi)'
+2026-06-24 00:42:36.043 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5243/api/user/profile - 200 null application/json; charset=utf-8 45.5167ms

@@ -13,14 +13,18 @@ namespace BackendApi.NHibernate
         static AppLogger()
         {
             Directory.CreateDirectory(LogFolder);
+            
+            // Clear old log files on startup
+            if (File.Exists(InfoLogFile))
+                File.Delete(InfoLogFile);
+            if (File.Exists(ErrorLogFile))
+                File.Delete(ErrorLogFile);
         }
 
         public static void Info(string message)
         {
             var logMessage =
                 $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] INFO: {message}\n";
-
-            Console.WriteLine(logMessage);
 
             File.AppendAllText(InfoLogFile, logMessage);
         }
@@ -30,8 +34,6 @@ namespace BackendApi.NHibernate
             var logMessage =
                 $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] SQL:\n{sql}\n";
 
-            Console.WriteLine(logMessage);
-
             File.AppendAllText(InfoLogFile, logMessage);
         }
 
@@ -39,8 +41,6 @@ namespace BackendApi.NHibernate
         {
             var logMessage =
                 $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] ERROR:\n{ex}\n";
-
-            Console.WriteLine(logMessage);
 
             File.AppendAllText(ErrorLogFile, logMessage);
         }
