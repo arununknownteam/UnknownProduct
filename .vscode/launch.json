@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch .NET Backend",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/backend/BackendApi/bin/Debug/net8.0/BackendApi",
+      "args": [],
+      "cwd": "${workspaceFolder}/backend/BackendApi",
+      "stopAtEntry": false,
+      "console": "integratedTerminal",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5243"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "requireExactSource": false
+    },
+    {
+      "name": "Attach to .NET Backend (Process)",
+      "type": "coreclr",
+      "request": "attach",
+      "preLaunchTask": "build"
+    },
+    {
+      "name": "Run .NET Backend (No Debug)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/backend/BackendApi/bin/Debug/net8.0/BackendApi",
+      "args": [],
+      "cwd": "${workspaceFolder}/backend/BackendApi",
+      "console": "integratedTerminal",
+      "noDebug": true
+    }
+  ]
+}
