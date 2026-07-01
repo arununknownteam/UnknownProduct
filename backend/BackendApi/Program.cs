@@ -14,7 +14,38 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs/backend-.log", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
+LoadDotEnv();
+
 var builder = WebApplication.CreateBuilder(args);
+
+void LoadDotEnv()
+{
+    var envFile = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+    if (!File.Exists(envFile))
+    {
+        return;
+    }
+
+    foreach (var line in File.ReadAllLines(envFile))
+    {
+        var trimmed = line.Trim();
+        if (trimmed.Length == 0 || trimmed.StartsWith("#"))
+            continue;
+
+        var parts = trimmed.Split('=', 2);
+        if (parts.Length != 2)
+            continue;
+
+        var key = parts[0].Trim();
+        var value = parts[1].Trim();
+        if (value.StartsWith("\"") && value.EndsWith("\"") && value.Length >= 2)
+        {
+            value = value[1..^1];
+        }
+
+        Environment.SetEnvironmentVariable(key, value);
+    }
+}
 
 // =====================
 // SERILOG
@@ -61,6 +92,8 @@ builder.Services.AddScoped<NHSession>(sp =>
 // SERVICES
 // =====================
 builder.Services.AddScoped<LoginService>();
+builder.Services.AddScoped<LLMService>();
+builder.Services.AddScoped<ChatFallbackService>();
 
 // =====================
 // JWT AUTH
