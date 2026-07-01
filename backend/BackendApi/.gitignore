@@ -1,2 +1,12 @@
 .env
 .venv/
+# Avoid committing build outputs
+/[Bb]in/
+/[Oo]bj/
+
+# Avoid committing local logs
+*.log
+backend/BackendApi/logs/
+
+# Avoid committing local environment variables (Security)
+.env
