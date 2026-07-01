@@ -22,8 +22,12 @@ export default function AuthPage() {
   const handleRegister = async (details) => {
     try {
       await registerUser(details);
-      setMsg("Registered successfully. Please login.");
-      setIsLogin(true);
+      const data = await loginUser({
+        email: details.email,
+        password: details.password,
+      });
+      localStorage.setItem("token", data.token);
+      window.location.reload();
     } catch (err) {
       setMsg(err.message || "Server not running");
     }
