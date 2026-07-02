@@ -264,6 +264,15 @@
   padding: 12px 14px;
 }
 
+.chat-rate-limit-warning {
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-top: 10px;
+}
+
 .chat-empty-state {
   display: flex;
   flex-direction: column;

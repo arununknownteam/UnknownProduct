@@ -65,7 +65,15 @@ namespace BackendApi.Controllers
 
                 AppLogger.Info($"Chat reply: {reply}");
 
-                // If LLM returned an error-like or instructional message, fall back to rule-based bot.
+                // Check for rate limit errors first - show the error message directly
+                if (!string.IsNullOrWhiteSpace(reply) && (reply.Contains("Rate limit reached #43212", StringComparison.OrdinalIgnoreCase)
+                     || reply.Contains("429", StringComparison.OrdinalIgnoreCase)))
+                {
+                    AppLogger.Info($"Rate limit detected, returning error message: {reply}");
+                    return Ok(new { reply = reply, fallback = false, rateLimited = true });
+                }
+
+                // If LLM returned other error-like or instructional messages, fall back to rule-based bot.
                 if (!string.IsNullOrWhiteSpace(reply) &&
                     (reply.Contains("AI request failed", StringComparison.OrdinalIgnoreCase)
                      || reply.Contains("no OpenAI API key", StringComparison.OrdinalIgnoreCase)

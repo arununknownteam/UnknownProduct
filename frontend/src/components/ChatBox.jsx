@@ -6,11 +6,13 @@ export default function ChatBox() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [rateLimited, setRateLimited] = useState(false);
   const chatListRef = useRef(null);
 
   const handleSend = async () => {
     if (!input.trim()) return;
     setError("");
+    setRateLimited(false);
     const question = input.trim();
     setInput("");
     setMessages((prev) => [...prev, { role: "user", text: question }]);
@@ -32,6 +34,11 @@ export default function ChatBox() {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Chat request failed.");
 
+      // Check if rate limited
+      if (data.rateLimited) {
+        setRateLimited(true);
+      }
+      
       setMessages((prev) => [...prev, { role: "assistant", text: data.reply }]);
     } catch (err) {
       setError(err.message || "Unable to send your message.");
@@ -71,6 +78,7 @@ export default function ChatBox() {
         )}
       </div>
       {error && <div className="chat-error">{error}</div>}
+      {rateLimited && <div className="chat-rate-limit-warning">⚠️ Rate limit reached. Please wait a few minutes before trying again.</div>}
       <div className="chat-input-row">
         <input
           value={input}

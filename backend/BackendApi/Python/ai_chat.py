@@ -5,7 +5,7 @@ from openai import OpenAI
 
 SYSTEM_PROMPT = "You are a helpful AI assistant."
 
-MODEL = "llama-3.3-70b-versatile"
+MODEL = "llama-3.1-8b-instant"
 
 
 def main():
@@ -75,10 +75,17 @@ def main():
         }))
 
     except Exception as e:
-
-        print(json.dumps({
-            "reply": f"Groq Error: {e}"
-        }))
+        error_message = str(e)
+        
+        # Check if it's a rate limit error
+        if "429" in error_message or "rate_limit" in error_message.lower():
+            print(json.dumps({
+                "reply": "Rate limit reached #43212"
+            }))
+        else:
+            print(json.dumps({
+                "reply": f"Groq Error: {e}"
+            }))
 
 
 if __name__ == "__main__":
