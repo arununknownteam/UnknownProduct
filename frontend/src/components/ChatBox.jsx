@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getAuthHeaders } from "../services/authService";
 
 export default function ChatBox() {
@@ -8,10 +8,10 @@ export default function ChatBox() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const chatListRef = useRef(null);
 
   const handleSend = async () => {
     if (!input.trim()) return;
-
     setError("");
     const question = input.trim();
     setInput("");
@@ -42,9 +42,15 @@ export default function ChatBox() {
     }
   };
 
+  useEffect(() => {
+    if (chatListRef.current) {
+      chatListRef.current.scrollTop = chatListRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <div className="chat-box">
-      <div className="chat-list">
+      <div ref={chatListRef} className="chat-list">
         {messages.map((message, index) => (
           <div
             key={index}
@@ -54,9 +60,7 @@ export default function ChatBox() {
           </div>
         ))}
       </div>
-
       {error && <div className="chat-error">{error}</div>}
-
       <div className="chat-input-row">
         <input
           value={input}
