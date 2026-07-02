@@ -1,0 +1,122 @@
+/* Chat Box Container */
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #1f2937;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+/* Message Area */
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Scrollbar styling for chat list */
+.chat-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-list::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 4px;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+.chat-list::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+.chat-list {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 #1f2937;
+}
+
+/* Chat Messages */
+.chat-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.chat-message.user {
+    background: #2563eb;
+    color: #ffffff;
+    align-self: flex-end;
+}
+
+.chat-message.assistant {
+    background: #2d3748;
+    color: #ffffff;
+    align-self: flex-start;
+}
+
+/* Error Message */
+.chat-error {
+    color: #ef4444;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 4px;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Input Row */
+.chat-input-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #374151;
+}
+
+.chat-input-row input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #3f4b60;
+    background: #2b3443;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.chat-input-row input:focus {
+    border-color: #2563eb;
+}
+
+.chat-input-row input::placeholder {
+    color: #9ca3af;
+}
+
+.chat-input-row button {
+    padding: 10px 20px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.chat-input-row button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.chat-input-row button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

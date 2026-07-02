@@ -1,19 +1,45 @@
 import { useState, useEffect } from "react";
 import { getAuthHeaders } from "../services/authService";
-import ChatBox from "../components/ChatBox";
+
+import Overview from "./Overview";
+import AIModels from "./AIModels";
+import Settings from "./Settings";
+import Security from "./Security";
+import Notifications from "./Notifications";
+
 import "../styles/profile.css";
 
 export default function Dashboard() {
+
   const [user, setUser] = useState(null);
+  const [activePage, setActivePage] = useState("overview");
+
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
 
   useEffect(() => {
+
     fetch("http://localhost:5243/api/user/profile", {
       headers: getAuthHeaders(),
     })
       .then((res) => res.json())
       .then((data) => setUser(data))
       .catch(() => setUser(null));
+
   }, []);
+
+  useEffect(() => {
+
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+
+  }, [darkMode]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -21,103 +47,127 @@ export default function Dashboard() {
   };
 
   return (
+
     <div className="profile-page">
+
+      {/* Sidebar */}
+
       <aside className="profile-sidebar">
+
         <div className="profile-avatar-card">
-          <div className="avatar">{user?.userName?.[0]?.toUpperCase() || "U"}</div>
+
+          <div className="avatar">
+            {user?.userName?.charAt(0)?.toUpperCase() || "U"}
+          </div>
+
           <h3>{user?.userName || "User"}</h3>
-          <p>{user?.email || "No email available"}</p>
+
+          <p>{user?.email || "No Email"}</p>
+
         </div>
 
         <nav className="sidebar-nav">
-          <button className="nav-item active">Overview</button>
-          <button className="nav-item">Settings</button>
-          <button className="nav-item">Security</button>
-          <button className="nav-item">Notifications</button>
+
+          <button
+            className={activePage === "overview" ? "nav-item active" : "nav-item"}
+            onClick={() => setActivePage("overview")}
+          >
+            Overview
+          </button>
+
+          <button
+            className={activePage === "ai" ? "nav-item active" : "nav-item"}
+            onClick={() => setActivePage("ai")}
+          >
+            AI Models
+          </button>
+
+          <button
+            className={activePage === "settings" ? "nav-item active" : "nav-item"}
+            onClick={() => setActivePage("settings")}
+          >
+            Settings
+          </button>
+
+          <button
+            className={activePage === "security" ? "nav-item active" : "nav-item"}
+            onClick={() => setActivePage("security")}
+          >
+            Security
+          </button>
+
+          <button
+            className={activePage === "notifications" ? "nav-item active" : "nav-item"}
+            onClick={() => setActivePage("notifications")}
+          >
+            Notifications
+          </button>
+
         </nav>
+
       </aside>
+
+      {/* Main */}
 
       <main className="profile-main">
+
         <header className="profile-header">
+
           <div>
-            <p className="eyebrow">Profile</p>
-            <h1>Welcome back, {user?.userName || "there"}</h1>
+
+            <h1>
+              Welcome back {user?.userName || "User"}
+            </h1>
+
             <p className="subtitle">
-              Manage your account, review your details, and update your settings.
+              Manage your profile and AI tools.
             </p>
+
           </div>
-          <button className="logout-button" onClick={handleLogout}>
-            Logout
-          </button>
+
+          <div className="header-actions">
+
+            <button
+              className="theme-btn"
+              onClick={() => setDarkMode(!darkMode)}
+            >
+              {darkMode ? "☀ Light" : "🌙 Dark"}
+            </button>
+
+            <button
+              className="logout-button"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+
+          </div>
+
         </header>
 
-        <section className="profile-section">
-          <div className="profile-card">
-            <h2>Account details</h2>
-            <div className="profile-details-grid">
-              <div>
-                <span className="label">Username</span>
-                <p>{user?.userName || "-"}</p>
-              </div>
-              <div>
-                <span className="label">Email</span>
-                <p>{user?.email || "-"}</p>
-              </div>
-              <div>
-                <span className="label">Joined</span>
-                <p>{user?.createdAt ? new Date(user.createdAt).toLocaleDateString() : "-"}</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {activePage === "overview" && (
+          <Overview user={user} />
+        )}
 
-        <section className="profile-section">
-          <div className="profile-card">
-            <div className="section-title-row">
-              <div>
-                <h2>AI Chat</h2>
-                <p className="subtitle">
-                  Talk with the assistant powered by the Python LLM integration.
-                </p>
-              </div>
-            </div>
-            <ChatBox />
-          </div>
-        </section>
+        {activePage === "ai" && (
+          <AIModels />
+        )}
 
-        <section className="profile-section">
-          <div className="profile-card">
-            <h2>Quick actions</h2>
-            <div className="action-list">
-              <button>Edit profile</button>
-              <button>Manage preferences</button>
-              <button>Change password</button>
-            </div>
-          </div>
-        </section>
+        {activePage === "settings" && (
+          <Settings />
+        )}
+
+        {activePage === "security" && (
+          <Security />
+        )}
+
+        {activePage === "notifications" && (
+          <Notifications />
+        )}
+
       </main>
 
-      <aside className="profile-secondary">
-        <div className="profile-card small-card">
-          <h3>Settings</h3>
-          <p>Use these quick links to change your account setup and preferences.</p>
-          <ul>
-            <li>Account visibility</li>
-            <li>Email notifications</li>
-            <li>Password reset</li>
-          </ul>
-        </div>
-
-        <div className="profile-card small-card">
-          <h3>Profile summary</h3>
-          <p>
-            Logged in as <strong>{user?.userName || "User"}</strong>.
-          </p>
-          <p>Role: <strong>Member</strong></p>
-          <p>Status: <strong>Active</strong></p>
-        </div>
-      </aside>
     </div>
-  );
 
+  );
 }
