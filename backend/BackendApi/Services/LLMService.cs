@@ -142,12 +142,10 @@ namespace BackendApi.Services
                 CreateNoWindow = true,
             };
 
-            var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY")
-                ?? Environment.GetEnvironmentVariable("GROQ_API_KEY");
+            var apiKey = Environment.GetEnvironmentVariable("GROQ_API_KEY");
 
             if (!string.IsNullOrWhiteSpace(apiKey))
             {
-                startInfo.Environment["OPENAI_API_KEY"] = apiKey;
                 startInfo.Environment["GROQ_API_KEY"] = apiKey;
             }
 
@@ -169,7 +167,7 @@ namespace BackendApi.Services
             if (process.ExitCode != 0)
             {
                 _logger.LogError("Python AI script error: {Error}", error);
-                throw new Exception("AI service failed to respond.");
+                throw new Exception(error);
             }
 
             try
