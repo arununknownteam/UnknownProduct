@@ -264,6 +264,39 @@
   padding: 12px 14px;
 }
 
+.chat-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  text-align: center;
+  flex: 1;
+}
+
+.chat-empty-text {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.chat-suggestion-btn {
+  padding: 14px 24px;
+  border: 1px solid #667eea;
+  border-radius: 14px;
+  background: #eef2ff;
+  color: #667eea;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.chat-suggestion-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
 /* AI Models Layout */
 .ai-layout {
   display: grid;

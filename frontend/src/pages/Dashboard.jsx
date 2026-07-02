@@ -105,45 +105,29 @@ export default function Dashboard() {
 
         </nav>
 
+        <div className="sidebar-actions">
+
+          <button
+            className="theme-btn"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            {darkMode ? "☀ Light" : "🌙 Dark"}
+          </button>
+
+          <button
+            className="logout-button"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+
+        </div>
+
       </aside>
 
       {/* Main */}
 
       <main className="profile-main">
-
-        <header className="profile-header">
-
-          <div>
-
-            <h1>
-              Welcome back {user?.userName || "User"}
-            </h1>
-
-            <p className="subtitle">
-              Manage your profile and AI tools.
-            </p>
-
-          </div>
-
-          <div className="header-actions">
-
-            <button
-              className="theme-btn"
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              {darkMode ? "☀ Light" : "🌙 Dark"}
-            </button>
-
-            <button
-              className="logout-button"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
-
-          </div>
-
-        </header>
 
         {activePage === "overview" && (
           <Overview user={user} />

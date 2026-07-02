@@ -2,9 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { getAuthHeaders } from "../services/authService";
 
 export default function ChatBox() {
-  const [messages, setMessages] = useState([
-    { role: "assistant", text: "Hello! Ask me anything in AI Chat." },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -51,14 +49,26 @@ export default function ChatBox() {
   return (
     <div className="chat-box">
       <div ref={chatListRef} className="chat-list">
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`chat-message ${message.role === "user" ? "user" : "assistant"}`}
-          >
-            <span>{message.text}</span>
+        {messages.length === 0 ? (
+          <div className="chat-empty-state">
+            <p className="chat-empty-text">Hello! Ask me anything in AI Chat.</p>
+            <button 
+              className="chat-suggestion-btn"
+              onClick={() => setInput("Ask me anything...")}
+            >
+              Ask anything to AI
+            </button>
           </div>
-        ))}
+        ) : (
+          messages.map((message, index) => (
+            <div
+              key={index}
+              className={`chat-message ${message.role === "user" ? "user" : "assistant"}`}
+            >
+              <span>{message.text}</span>
+            </div>
+          ))
+        )}
       </div>
       {error && <div className="chat-error">{error}</div>}
       <div className="chat-input-row">
