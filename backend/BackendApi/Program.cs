@@ -57,18 +57,23 @@ builder.Host.UseSerilog();
 // =====================
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins("http://localhost:5173", "http://localhost:3000")
               .AllowAnyMethod()
-              .AllowAnyHeader();
+              .AllowAnyHeader()
+              .AllowCredentials();
     });
 });
 
 // =====================
 // CONTROLLERS
 // =====================
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+    });
 
 // =====================
 // SWAGGER
@@ -94,6 +99,7 @@ builder.Services.AddScoped<NHSession>(sp =>
 builder.Services.AddScoped<LoginService>();
 builder.Services.AddScoped<LLMService>();
 builder.Services.AddScoped<ChatFallbackService>();
+builder.Services.AddScoped<PDFProcessingService>();
 
 // =====================
 // JWT AUTH
@@ -130,7 +136,7 @@ var app = builder.Build();
 // =====================
 // MIDDLEWARE PIPELINE
 // =====================
-app.UseCors("AllowAll");
+app.UseCors("AllowFrontend");
 
 app.UseSwagger();
 app.UseSwaggerUI();

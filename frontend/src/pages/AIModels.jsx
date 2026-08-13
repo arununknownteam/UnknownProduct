@@ -1,9 +1,10 @@
-import {useState} from "react";
+import { useState } from "react";
 import ChatBox from "../components/ChatBox";
+import DocumentManager from "../components/DocumentManager";
 
 export default function AIModels(){
-
-const[selected,setSelected]=useState("chat");
+  const [selected, setSelected] = useState("chat");
+  const [token, setToken] = useState(localStorage.getItem('token') || '');
 
 return(
 
@@ -49,7 +50,7 @@ return(
 <h2>Voice Chat Coming Soon</h2>}
 
 {selected==="pdf" &&
-<h2>PDF Chat Coming Soon</h2>}
+<DocumentManager token={token} />}
 
 {selected==="vision" &&
 <h2>Vision AI Coming Soon</h2>}

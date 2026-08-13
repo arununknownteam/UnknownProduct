@@ -1,0 +1,1 @@
+This document discusses machine learning and artificial intelligence. Machine learning is a subset of AI that enables computers to learn from data without being explicitly programmed. Deep learning uses neural networks with multiple layers.

@@ -70,7 +70,7 @@ namespace BackendApi.NHibernate
                     "Schema export started."
                 );
 
-               var schemaUpdate =
+                var schemaUpdate =
                 new SchemaUpdate(config);
 
             schemaUpdate.Execute(
@@ -80,12 +80,13 @@ namespace BackendApi.NHibernate
                 },
                 true
             );
-                AppLogger.Info(
-                    "Schema export completed."
-                );
 
-                var sessionFactory =
-                    config.BuildSessionFactory();
+                 AppLogger.Info(
+                     "Schema export completed."
+                 );
+
+                 var sessionFactory =
+                     config.BuildSessionFactory();
 
                 AppLogger.Info(
                     "SessionFactory created successfully."
