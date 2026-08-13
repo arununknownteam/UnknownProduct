@@ -103,10 +103,19 @@ namespace BackendApi.Services
             var error = await process.StandardError.ReadToEndAsync();
             await process.WaitForExitAsync();
 
+            _logger.LogInformation("Python script output: {Output}", output);
+            _logger.LogInformation("Python script error: {Error}", error);
+
             if (process.ExitCode != 0)
             {
                 _logger.LogError("Python AI script error: {Error}", error);
-                throw new Exception("AI service failed to respond.");
+                return $"AI service error: {error}";
+            }
+
+            if (string.IsNullOrWhiteSpace(output))
+            {
+                _logger.LogError("Python script returned empty output");
+                return "AI service returned empty response. Please try again.";
             }
 
             try
@@ -117,12 +126,13 @@ namespace BackendApi.Services
                     return replyElement.GetString() ?? "No answer returned.";
                 }
 
-                throw new Exception("Invalid chat response format.");
+                _logger.LogError("Invalid response format from Python: {Output}", output);
+                return "Invalid response format from AI service.";
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Unable to parse AI response: {Output}", output);
-                throw new Exception("Invalid AI response.");
+                return $"Error parsing AI response: {ex.Message}";
             }
         }
 
@@ -142,12 +152,10 @@ namespace BackendApi.Services
                 CreateNoWindow = true,
             };
 
-            var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY")
-                ?? Environment.GetEnvironmentVariable("GROQ_API_KEY");
+            var apiKey = Environment.GetEnvironmentVariable("GROQ_API_KEY");
 
             if (!string.IsNullOrWhiteSpace(apiKey))
             {
-                startInfo.Environment["OPENAI_API_KEY"] = apiKey;
                 startInfo.Environment["GROQ_API_KEY"] = apiKey;
             }
 
@@ -169,7 +177,7 @@ namespace BackendApi.Services
             if (process.ExitCode != 0)
             {
                 _logger.LogError("Python AI script error: {Error}", error);
-                throw new Exception("AI service failed to respond.");
+                throw new Exception(error);
             }
 
             try

@@ -1,76 +1,91 @@
 import json
 import os
 import sys
+from openai import OpenAI
+
+SYSTEM_PROMPT = "You are a helpful AI assistant."
+
+MODEL = "llama-3.1-8b-instant"
 
 
 def main():
+
     try:
         payload = json.load(sys.stdin)
-        prompt = payload.get("prompt", "").strip()
-    except Exception as exc:
-        print(json.dumps({"reply": f"Invalid request: {exc}"}))
+    except Exception as e:
+        print(json.dumps({"reply": str(e)}))
         return
 
-    if not prompt:
-        print(json.dumps({"reply": "Type a message to start the AI chat."}))
-        return
-
-    api_key = os.getenv("OPENAI_API_KEY") or os.getenv("GROQ_API_KEY")
+    api_key = os.getenv("GROQ_API_KEY")
 
     if not api_key:
         print(json.dumps({
-            "reply": (
-                "AI chat is ready, but no API key was found. "
-                "Set OPENAI_API_KEY or GROQ_API_KEY in your environment to use the real model."
-            )
+            "reply": "GROQ_API_KEY not found."
         }))
         return
 
+    client = OpenAI(
+        api_key=api_key,
+        base_url="https://api.groq.com/openai/v1"
+    )
+
     try:
-        import openai
 
-        client = openai.OpenAI(api_key=api_key)
+        if payload.get("messages"):
 
-        # If messages provided, use them; otherwise use single prompt
-        messages_payload = None
-        if isinstance(payload, dict) and "messages" in payload:
-            messages_payload = payload.get("messages")
+            messages = [
+                {
+                    "role": "system",
+                    "content": SYSTEM_PROMPT
+                }
+            ]
 
-        if messages_payload:
-            # assume messages_payload is a list of {role, content}
-            messages = []
-            # ensure a system message exists at the start
-            messages.append({"role": "system", "content": "You are a helpful assistant."})
-            for m in messages_payload:
-                role = m.get("role") if isinstance(m, dict) else "user"
-                content = m.get("content") if isinstance(m, dict) else str(m)
-                messages.append({"role": role, "content": content})
+            messages.extend(payload["messages"])
 
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=messages,
-                max_tokens=300,
-                temperature=0.7,
-            )
         else:
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {"role": "user", "content": prompt},
-                ],
-                max_tokens=300,
-                temperature=0.7,
-            )
 
-        assistant_message = response.choices[0].message.content.strip()
-        print(json.dumps({"reply": assistant_message}))
-    except ModuleNotFoundError:
+            prompt = payload.get("prompt", "").strip()
+
+            if prompt == "":
+                print(json.dumps({
+                    "reply": "Please enter a message."
+                }))
+                return
+
+            messages = [
+                {
+                    "role": "system",
+                    "content": SYSTEM_PROMPT
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+
+        response = client.chat.completions.create(
+            model=MODEL,
+            messages=messages,
+            temperature=0.7,
+            max_tokens=1024
+        )
+
         print(json.dumps({
-            "reply": "The OpenAI Python SDK is not installed. Run `pip install openai` in backend/BackendApi/Python/.venv/bin/python -m pip install openai."
+            "reply": response.choices[0].message.content
         }))
-    except Exception as exc:
-        print(json.dumps({"reply": f"AI request failed: {exc}"}))
+
+    except Exception as e:
+        error_message = str(e)
+        
+        # Check if it's a rate limit error
+        if "429" in error_message or "rate_limit" in error_message.lower():
+            print(json.dumps({
+                "reply": "Rate limit reached #43212"
+            }))
+        else:
+            print(json.dumps({
+                "reply": f"Groq Error: {e}"
+            }))
 
 
 if __name__ == "__main__":

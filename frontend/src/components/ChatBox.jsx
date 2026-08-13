@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getAuthHeaders } from "../services/authService";
 
 export default function ChatBox() {
-  const [messages, setMessages] = useState([
-    { role: "assistant", text: "Hello! Ask me anything in AI Chat." },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [rateLimited, setRateLimited] = useState(false);
+  const chatListRef = useRef(null);
 
   const handleSend = async () => {
     if (!input.trim()) return;
-
     setError("");
+    setRateLimited(false);
     const question = input.trim();
     setInput("");
     setMessages((prev) => [...prev, { role: "user", text: question }]);
@@ -34,6 +34,11 @@ export default function ChatBox() {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Chat request failed.");
 
+      // Check if rate limited
+      if (data.rateLimited) {
+        setRateLimited(true);
+      }
+      
       setMessages((prev) => [...prev, { role: "assistant", text: data.reply }]);
     } catch (err) {
       setError(err.message || "Unable to send your message.");
@@ -42,21 +47,38 @@ export default function ChatBox() {
     }
   };
 
+  useEffect(() => {
+    if (chatListRef.current) {
+      chatListRef.current.scrollTop = chatListRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <div className="chat-box">
-      <div className="chat-list">
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`chat-message ${message.role === "user" ? "user" : "assistant"}`}
-          >
-            <span>{message.text}</span>
+      <div ref={chatListRef} className="chat-list">
+        {messages.length === 0 ? (
+          <div className="chat-empty-state">
+            <p className="chat-empty-text">Hello! Ask me anything in AI Chat.</p>
+            <button 
+              className="chat-suggestion-btn"
+              onClick={() => setInput("Ask me anything...")}
+            >
+              Ask anything to AI
+            </button>
           </div>
-        ))}
+        ) : (
+          messages.map((message, index) => (
+            <div
+              key={index}
+              className={`chat-message ${message.role === "user" ? "user" : "assistant"}`}
+            >
+              <span>{message.text}</span>
+            </div>
+          ))
+        )}
       </div>
-
       {error && <div className="chat-error">{error}</div>}
-
+      {rateLimited && <div className="chat-rate-limit-warning">⚠️ Rate limit reached. Please wait a few minutes before trying again.</div>}
       <div className="chat-input-row">
         <input
           value={input}

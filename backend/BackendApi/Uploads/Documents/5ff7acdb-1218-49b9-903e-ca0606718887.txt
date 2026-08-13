@@ -1,0 +1,632 @@
+# Indian Polity – Fundamental Concepts (Approx. 5 Pages)
+
+# Indian Polity
+
+## Introduction
+
+Indian Polity is the study of the political system, Constitution, government structure, rights and duties of citizens, and the functioning of democratic institutions in India. It is one of the most important subjects for UPSC, TNPSC, SSC, Banking, Railways, and other competitive examinations.
+
+The Constitution of India is the supreme law of the country. It lays down the framework for the political principles, procedures, powers, and responsibilities of the government institutions. It also guarantees the rights and freedoms of every citizen while maintaining unity, justice, liberty, equality, and fraternity.
+
+---
+
+# 1. Historical Background of the Indian Constitution
+
+The Indian Constitution did not emerge overnight. It evolved over nearly two centuries through various Acts passed by the British Parliament.
+
+## Important Constitutional Acts
+
+### Regulating Act, 1773
+
+* First step toward centralized administration.
+* Established the office of Governor-General of Bengal.
+* Warren Hastings became the first Governor-General.
+* Supreme Court established in Calcutta (1774).
+
+### Pitt's India Act, 1784
+
+* Introduced dual control between the British Government and East India Company.
+* Created the Board of Control.
+
+### Charter Act, 1813
+
+* Ended East India Company's monopoly over trade except tea and trade with China.
+* Allowed Christian missionaries.
+
+### Charter Act, 1833
+
+* Governor-General of Bengal became Governor-General of India.
+* Lord William Bentinck became the first Governor-General of India.
+* Introduced open competition for civil services (later implemented).
+
+### Charter Act, 1853
+
+* Separated legislative and executive functions.
+* Open competition for Civil Services recommended.
+
+### Government of India Act, 1858
+
+* Company rule ended.
+* Power transferred to the British Crown.
+* Secretary of State for India appointed.
+
+### Indian Councils Act, 1909 (Morley-Minto Reforms)
+
+* Introduced separate electorates for Muslims.
+* Increased Indian representation.
+
+### Government of India Act, 1919 (Montagu-Chelmsford Reforms)
+
+* Introduced Dyarchy in provinces.
+* Expanded legislative councils.
+
+### Government of India Act, 1935
+
+This is the most important Act because many features of the Indian Constitution were borrowed from it.
+
+Features:
+
+* Federal Structure
+* Provincial Autonomy
+* Public Service Commission
+* Federal Court
+* Office of Governor
+
+---
+
+# 2. Constituent Assembly
+
+The Constituent Assembly drafted the Constitution of India.
+
+### Formation
+
+* Proposed by the Cabinet Mission Plan (1946).
+* Total Members: 389
+* After Partition: 299 members
+
+### Important Personalities
+
+**Dr. B. R. Ambedkar**
+
+* Chairman of Drafting Committee
+* Known as the Father of the Indian Constitution.
+
+**Dr. Rajendra Prasad**
+
+* President of Constituent Assembly.
+* First President of India.
+
+**Jawaharlal Nehru**
+
+* Presented the Objective Resolution.
+
+### Timeline
+
+* First Meeting: 9 December 1946
+* Objective Resolution: 13 December 1946
+* Constitution Adopted: 26 November 1949
+* Constitution Came into Force: 26 January 1950
+
+The Constitution took:
+
+* 2 years
+* 11 months
+* 18 days
+
+Number of sittings:
+
+* 11 Sessions
+* 165 Days
+
+---
+
+# 3. Features of the Indian Constitution
+
+The Indian Constitution is the longest written Constitution in the world.
+
+## Major Features
+
+### Written Constitution
+
+Contains detailed provisions regarding governance.
+
+### Lengthiest Constitution
+
+Originally:
+
+* 395 Articles
+* 22 Parts
+* 8 Schedules
+
+Currently:
+
+* More than 470 Articles
+* 25 Parts
+* 12 Schedules
+
+### Parliamentary Government
+
+India follows the British model.
+
+Characteristics:
+
+* Real Executive: Prime Minister
+* Nominal Executive: President
+* Collective Responsibility
+
+### Federal System
+
+India has:
+
+* Central Government
+* State Governments
+
+Power is divided through:
+
+* Union List
+* State List
+* Concurrent List
+
+### Unitary Features
+
+During emergencies, India behaves like a unitary state.
+
+Examples:
+
+* Single Constitution
+* Single Citizenship
+* Strong Centre
+
+### Independent Judiciary
+
+The Supreme Court protects the Constitution.
+
+Functions:
+
+* Judicial Review
+* Judicial Activism
+* Guardian of Fundamental Rights
+
+### Secular State
+
+India has no official religion.
+
+Every citizen enjoys:
+
+* Freedom of Religion
+* Equal treatment before law
+
+### Universal Adult Franchise
+
+Every citizen above 18 years has voting rights.
+
+---
+
+# 4. Preamble of the Constitution
+
+The Preamble is the introduction to the Constitution.
+
+Text highlights India as:
+
+* Sovereign
+* Socialist
+* Secular
+* Democratic
+* Republic
+
+Objectives:
+
+### Justice
+
+* Social
+* Economic
+* Political
+
+### Liberty
+
+* Thought
+* Expression
+* Belief
+* Faith
+* Worship
+
+### Equality
+
+* Status
+* Opportunity
+
+### Fraternity
+
+* Dignity of Individual
+* Unity and Integrity of Nation
+
+The words:
+
+* Socialist
+* Secular
+* Integrity
+
+were added by the **42nd Constitutional Amendment (1976).**
+
+---
+
+# 5. Sources of the Indian Constitution
+
+Many provisions were borrowed from different countries.
+
+| Country        | Borrowed Feature                                 |
+| -------------- | ------------------------------------------------ |
+| United Kingdom | Parliamentary System, Rule of Law                |
+| USA            | Fundamental Rights, Judicial Review, Impeachment |
+| Ireland        | Directive Principles of State Policy             |
+| Canada         | Strong Centre, Residuary Powers                  |
+| Australia      | Concurrent List                                  |
+| Germany        | Emergency Provisions                             |
+| USSR (Russia)  | Fundamental Duties                               |
+| South Africa   | Constitutional Amendment Procedure               |
+| Japan          | Procedure Established by Law                     |
+
+---
+
+# 6. Citizenship
+
+Citizenship defines the legal relationship between a person and the State.
+
+Ways to acquire citizenship:
+
+* By Birth
+* By Descent
+* By Registration
+* By Naturalization
+* By Incorporation of Territory
+
+India follows:
+
+**Single Citizenship**
+
+Unlike the USA, there is no dual citizenship at the Union and State levels.
+
+---
+
+# 7. Fundamental Rights
+
+Fundamental Rights are given in **Articles 12–35**.
+
+They protect citizens from arbitrary government action.
+
+## Six Fundamental Rights
+
+### 1. Right to Equality
+
+Articles:
+
+* 14–18
+
+Includes:
+
+* Equality before Law
+* Equal Protection
+* Abolition of Untouchability
+* Abolition of Titles
+
+---
+
+### 2. Right to Freedom
+
+Articles:
+19–22
+
+Includes:
+
+* Freedom of Speech
+* Freedom of Movement
+* Freedom of Association
+* Freedom of Profession
+
+---
+
+### 3. Right Against Exploitation
+
+Articles:
+23–24
+
+Prohibits:
+
+* Human Trafficking
+* Forced Labour
+* Child Labour in hazardous industries
+
+---
+
+### 4. Right to Freedom of Religion
+
+Articles:
+25–28
+
+Includes:
+
+* Freedom to profess religion
+* Freedom to practice religion
+* Freedom to propagate religion
+
+---
+
+### 5. Cultural and Educational Rights
+
+Articles:
+29–30
+
+Protects:
+
+* Minorities
+* Language
+* Culture
+* Educational Institutions
+
+---
+
+### 6. Right to Constitutional Remedies
+
+Article:
+32
+
+Called the **Heart and Soul of the Constitution** by Dr. B. R. Ambedkar.
+
+Allows citizens to approach the Supreme Court.
+
+---
+
+# 8. Directive Principles of State Policy (DPSP)
+
+Articles:
+36–51
+
+Purpose:
+Guide the government in making laws.
+
+They are:
+
+* Non-justiciable
+* Fundamental in governance
+
+Categories:
+
+### Socialistic Principles
+
+* Equal Pay
+* Welfare State
+* Health
+* Education
+
+### Gandhian Principles
+
+* Village Panchayats
+* Cottage Industries
+* Cow Protection
+
+### Liberal Principles
+
+* Uniform Civil Code
+* International Peace
+* Independent Judiciary
+
+---
+
+# 9. Fundamental Duties
+
+Added by:
+
+**42nd Constitutional Amendment (1976).**
+
+Article:
+51A
+
+Initially:
+10 Duties
+
+Now:
+11 Duties (86th Amendment added one more.)
+
+Important Duties:
+
+* Respect Constitution
+* Respect National Flag
+* Respect National Anthem
+* Protect Environment
+* Promote Harmony
+* Safeguard Public Property
+* Develop Scientific Temper
+* Provide Education to Children (6–14 years)
+
+---
+
+# 10. Union Executive
+
+The Union Executive consists of:
+
+* President
+* Vice President
+* Prime Minister
+* Council of Ministers
+* Attorney General
+
+## President
+
+Articles:
+52–62
+
+The President is:
+
+* Constitutional Head
+* First Citizen of India
+* Supreme Commander of Armed Forces
+
+Election:
+Indirectly elected.
+
+Term:
+5 years.
+
+---
+
+## Prime Minister
+
+Real executive of India.
+
+Functions:
+
+* Heads Council of Ministers
+* Advises President
+* Coordinates government
+* Leader of Lok Sabha (usually)
+
+---
+
+# 11. Parliament
+
+Parliament consists of:
+
+* President
+* Rajya Sabha
+* Lok Sabha
+
+### Rajya Sabha
+
+Maximum Strength:
+250
+
+Current Maximum Elected:
+238
+
+Nominated:
+12
+
+Permanent House.
+
+One-third members retire every two years.
+
+---
+
+### Lok Sabha
+
+Maximum Strength:
+552
+
+Current Elected Strength:
+543
+
+Term:
+5 years
+
+Can be dissolved.
+
+---
+
+# 12. Judiciary
+
+The Judiciary protects the Constitution.
+
+Structure:
+
+* Supreme Court
+* High Courts
+* District Courts
+
+Functions:
+
+* Judicial Review
+* Protection of Rights
+* Constitutional Interpretation
+
+---
+
+# 13. Emergency Provisions
+
+Three types:
+
+### National Emergency
+
+Article:
+352
+
+Reason:
+War
+External Aggression
+Armed Rebellion
+
+---
+
+### State Emergency
+
+Article:
+356
+
+Popularly called:
+President's Rule
+
+---
+
+### Financial Emergency
+
+Article:
+360
+
+Never imposed till date.
+
+---
+
+# 14. Constitutional Amendments
+
+Article:
+368
+
+Three methods:
+
+* Simple Majority
+* Special Majority
+* Special + State Ratification
+
+Important Amendments:
+
+* 42nd Amendment – Mini Constitution
+* 44th Amendment – Restored Democratic Rights
+* 61st Amendment – Voting Age reduced from 21 to 18
+* 73rd Amendment – Panchayati Raj
+* 74th Amendment – Municipalities
+* 86th Amendment – Right to Education
+* 101st Amendment – GST
+* 103rd Amendment – 10% EWS Reservation
+
+---
+
+# 15. Local Self Government
+
+## Panchayati Raj
+
+Introduced through:
+73rd Constitutional Amendment (1992)
+
+Three-tier system:
+
+* Gram Panchayat
+* Panchayat Samiti
+* Zilla Parishad
+
+---
+
+## Municipalities
+
+Introduced through:
+74th Constitutional Amendment
+
+Types:
+
+* Municipal Corporation
+* Municipal Council
+* Nagar Panchayat
+
+---
+
+# Conclusion
+
+Indian Polity provides the constitutional and institutional framework that governs the world's largest democracy. The Constitution ensures a balance between the powers of the Union and States while safeguarding the rights of citizens through Fundamental Rights, Directive Principles of State Policy, and an independent judiciary. Understanding concepts such as the historical evolution of the Constitution, the Preamble, federalism, Parliament, the Executive, the Judiciary, Emergency Provisions, and Local Self-Government is essential for every citizen and forms the foundation for success in competitive examinations such as UPSC, TNPSC, SSC, Banking, Railways, and State PSCs. A strong grasp of these core concepts enables learners to better understand India's democratic values, governance, and constitutional principles.
