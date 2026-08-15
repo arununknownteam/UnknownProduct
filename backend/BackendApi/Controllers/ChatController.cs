@@ -261,11 +261,12 @@ namespace BackendApi.Controllers
                 // Check for error messages in reply
                 if (reply.StartsWith("AI service error:") || 
                     reply.StartsWith("Error parsing AI response:") ||
-                    reply.StartsWith("AI service returned empty response"))
+                    reply.StartsWith("AI service returned empty response") ||
+                    reply.StartsWith("Groq Error:"))
                 {
                     var fallback = _fallbackService.Respond(request.Message ?? string.Empty);
                     AppLogger.Info($"Using fallback due to AI error: {reply}");
-                    return Ok(new { reply = fallback, fallback = true });
+                    return Ok(new { reply = fallback, fallback = true, error = "AI service temporarily unavailable" });
                 }
 
                 // Check for rate limit errors

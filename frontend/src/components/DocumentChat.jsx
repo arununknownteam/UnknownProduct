@@ -43,13 +43,17 @@ export default function DocumentChat({ document, token, onViewPage }) {
         }
       );
 
-      const aiMessage = {
-        role: 'assistant',
-        content: response.data.reply,
-        citations: response.data.citations || []
-      };
+      if (response.data.reply && (response.data.reply.startsWith("Groq Error:") || response.data.reply.startsWith("AI service error:"))) {
+        setError("Unable to get a response from the AI service. Please try again.");
+      } else {
+        const aiMessage = {
+          role: 'assistant',
+          content: response.data.reply,
+          citations: response.data.citations || []
+        };
 
-      setMessages(prev => [...prev, aiMessage]);
+        setMessages(prev => [...prev, aiMessage]);
+      }
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to get response');
       setMessages(prev => [...prev, { 

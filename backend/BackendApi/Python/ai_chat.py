@@ -8,6 +8,27 @@ SYSTEM_PROMPT = "You are a helpful AI assistant."
 MODEL = "llama-3.1-8b-instant"
 
 
+def clean_messages_for_text_model(messages):
+    """Remove image content from messages since the model is text-only."""
+    cleaned = []
+    for msg in messages:
+        content = msg.get("content", "")
+        role = msg.get("role", "user")
+
+        if isinstance(content, list):
+            text_parts = []
+            for item in content:
+                if isinstance(item, dict):
+                    if item.get("type") == "text":
+                        text_parts.append(item.get("text", ""))
+                    elif item.get("type") == "image_url":
+                        text_parts.append("[Image content omitted - model does not support image input]")
+            content = " ".join(text_parts) if text_parts else ""
+
+        cleaned.append({"role": role, "content": str(content)})
+    return cleaned
+
+
 def main():
 
     try:
@@ -40,7 +61,7 @@ def main():
                 }
             ]
 
-            messages.extend(payload["messages"])
+            messages.extend(clean_messages_for_text_model(payload["messages"]))
 
         else:
 

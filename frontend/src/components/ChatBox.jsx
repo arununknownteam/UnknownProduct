@@ -39,8 +39,12 @@ export default function ChatBox() {
       if (data.rateLimited) {
         setRateLimited(true);
       }
-      
-      setMessages((prev) => [...prev, { role: "assistant", text: data.reply }]);
+
+      if (data.reply && (data.reply.startsWith("Groq Error:") || data.reply.startsWith("AI service error:"))) {
+        setError("Unable to get a response from the AI service. Please try again.");
+      } else {
+        setMessages((prev) => [...prev, { role: "assistant", text: data.reply }]);
+      }
     } catch (err) {
       setError(err.message || "Unable to send your message.");
     } finally {
