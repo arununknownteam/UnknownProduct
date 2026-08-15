@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { getAuthHeaders } from "../services/authService";
+import "../styles/chatbox.css";
 
 export default function ChatBox() {
   const [messages, setMessages] = useState([]);

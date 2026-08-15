@@ -2,21 +2,24 @@
 .chat-box {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
     background: #1f2937;
     border-radius: 8px;
     padding: 16px;
+    overflow: hidden;
 }
 
 /* Message Area */
 .chat-list {
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 16px;
     width: 100%;
-    max-height: 500px;
     overflow-y: auto;
     padding-right: 8px;
+    padding-bottom: 8px;
 }
 
 /* Scrollbar styling for chat list */
@@ -79,6 +82,7 @@
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid #374151;
+    flex-shrink: 0;
 }
 
 .chat-input-row input {
